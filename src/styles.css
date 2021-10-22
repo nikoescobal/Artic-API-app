@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply bg-blue-100 flex flex-col justify-between h-screen;
+  @apply bg-purple-100 flex flex-col justify-between h-screen;
 }
 
 #home,
@@ -27,11 +27,11 @@
 }
 
 .description {
-  @apply font-exo italic text-lg text-yellow-600 capitalize;
+  @apply font-exo font-semibold italic text-lg text-yellow-600 capitalize;
 }
 
 .name {
-  @apply px-3 font-extralight font-raleway capitalize;
+  @apply px-3 font-extralight font-raleway capitalize text-purple-900;
 }
 
 .art-style {
@@ -47,7 +47,7 @@
 }
 
 .caption-content {
-  @apply flex py-3 space-x-6 text-base w-full font-nunito;
+  @apply flex py-3 space-x-6 text-purple-900 text-base w-full font-nunito;
 }
 
 .nav-container {
