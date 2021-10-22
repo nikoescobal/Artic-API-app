@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply flex flex-col justify-between h-screen;
+  @apply bg-blue-100 flex flex-col justify-between h-screen;
 }
 
 #home,
@@ -15,7 +15,7 @@
 }
 
 #image-container {
-  @apply p-4 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  @apply p-4 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 }
 
 #logo {
@@ -23,7 +23,31 @@
 }
 
 .img-style {
-  @apply h-96 w-full object-cover;
+  @apply h-full md:h-96 object-cover rounded;
+}
+
+.description {
+  @apply font-exo italic text-lg text-yellow-600 capitalize;
+}
+
+.name {
+  @apply px-3 font-extralight font-raleway capitalize;
+}
+
+.art-style {
+  @apply w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-6 gap-4;
+}
+
+.article-style {
+  @apply flex justify-center w-full h-full p-3 flex-col space-y-2 rounded border-double border-4 border-purple-400 bg-blue-50;
+}
+
+.caption-container {
+  @apply flex justify-between px-3 space-x-4;
+}
+
+.caption-content {
+  @apply flex py-3 space-x-6 text-base w-full font-nunito;
 }
 
 .nav-container {
@@ -43,5 +67,5 @@
 } */
 
 .footer {
-  @apply flex text-center group-hover:text-blue-600 p-4 font-exo italic text-white justify-center bg-gradient-to-l from-yellow-500 via-blue-500 hover:text-yellow-300 cursor-pointer to-pink-500 space-x-2;
+  @apply flex text-center group-hover:text-blue-600 p-4 font-exo italic text-white justify-center bg-gradient-to-l from-yellow-500 via-blue-500 hover:text-pink-200 cursor-pointer to-pink-500 space-x-2;
 }
