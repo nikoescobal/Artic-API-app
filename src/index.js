@@ -4,7 +4,7 @@
 //  add the image tag to the image container
 // step 4: call the variable and populate the src tag into the images variable
 
-const url = 'https://api.unsplash.com/search/photos/?query=aesthetic&per_page=11&client_id=BPO4fENIExxJAWfs6JT6pzqtAfZtPcFpQaUOb-FLBTc';
+const url = 'https://api.unsplash.com/search/photos/?query=sushi&per_page=21&client_id=BPO4fENIExxJAWfs6JT6pzqtAfZtPcFpQaUOb-FLBTc';
 const container = document.querySelector('#image-container');
 const getImages = async () => {
   const response = await fetch(url);
