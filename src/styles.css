@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply bg-purple-100 flex flex-col justify-between h-screen;
+  @apply bg-purple-50 flex flex-col justify-between h-screen;
 }
 
 #home,
@@ -27,7 +27,7 @@
 }
 
 .comment-count {
-  @apply p-2 bg-blue-400 text-white rounded-full;
+  @apply py-2 px-3 bg-blue-400 text-white rounded-full hover:text-yellow-100 hover:bg-pink-500;
 }
 
 .description {

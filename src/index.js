@@ -10,6 +10,33 @@
 
 // capitalize("Hello")
 
+const appId = 'NJ3ipQ2qLDdQtFKS6pPk';
+
+const addLike = async (image) => {
+  console.log(image);
+  await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "item_id": `${image.id}`,
+      }),
+    })
+    .then((response) => response.text()).then(d => console.log(d));
+};
+
+const getHearts = (images) => {
+  const hearts = document.getElementsByClassName('heart');
+  const heartsArray = Array.from(hearts)
+  // console.log(hearts);
+  heartsArray.forEach((heart, i) => {
+    const tempImage = images[i]
+    heart.addEventListener('click', () => addLike(tempImage));
+  });
+};
+
+
 const url = 'https://api.unsplash.com/search/photos/?query=aesthetic&per_page=20&client_id=BPO4fENIExxJAWfs6JT6pzqtAfZtPcFpQaUOb-FLBTc';
 const container = document.querySelector('#image-container');
 const getImages = async () => {
@@ -23,7 +50,7 @@ const getImages = async () => {
     name: image.user.first_name,
     date: image.created_at.split('T')[0],
   })).filter((image) => image.description !== null && image.description.length < 40 && image.links !== null && image.name !== null && image.name);
-
+  // eslint-disable-next-line array-callback-return
   images.map((image) => {
     const imageUrls = image.urls;
     container.insertAdjacentHTML('afterbegin', `<article class="article-style">
@@ -32,7 +59,7 @@ const getImages = async () => {
     <figure class="caption-container">
       <figcaption class="caption-content">
       <div class="comment-container">
-        <svg xmlns="http://www.w3.org/2000/svg" id="${image.id}" class="like h-5 w-5" viewBox="0 0 20 20" fill="red">
+        <svg xmlns="http://www.w3.org/2000/svg" id="${image.id}" class="heart h-5 w-5" viewBox="0 0 20 20" fill="red">
         <path fill-rule="evenodd"
           d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
           clip-rule="evenodd" />
@@ -48,12 +75,36 @@ const getImages = async () => {
       </figcaption>
       </div>
     </figure>
-
-
   </article>`);
   });
+  getHearts(images)
 };
-
-
+// const like = async (id) => {
+//   const appID = 'Y5ExZ6TMJ2KXP15dXk0s';
+//   await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/likes/`, {
+//     method: 'Post',
+//     headers: {
+//       'content-type': 'application/json; charset=UTF-8',
+//     },
+//     body: JSON.stringify({
+//       item_id: id,
+//     }),
+//   }).then(() => {
+//     updateLikes();
+//   });
+// };
 
 getImages();
+
+const getAppId = async () => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', {
+    method: 'post',
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
+  const data = await response.text();
+  // console.log(data);
+};
+
+getAppId();
