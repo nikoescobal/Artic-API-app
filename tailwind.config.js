@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         nunito: ['"Nunito"', 'sans-serif'],
         exo: ['"Exo"', 'sans-serif'],
+        italianno: ['"Italianno"', 'cursive'],
         raleway: ['"Raleway"', 'sans-serif'],
       },
     },

@@ -174,7 +174,7 @@ const getImages = async () => {
         alt="image of artwork">
       <figure class="caption-container">
         <figcaption class="caption-content">
-          <img class="like" id="${img.id}" src="/src/heart-empty.png" alt="like icon">&nbsp;
+          <img class="like" id="${img.id}" src="/src/assets/full-heart.png" alt="like icon">&nbsp;
             <span class="like-count">
             ${likes[index]} Likes
             </span>
