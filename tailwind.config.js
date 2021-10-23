@@ -1,3 +1,5 @@
+/* eslint-disable */
+/* stylelint-disable */
 module.exports = {
   mode: 'jit',
   purge: [

@@ -74,12 +74,12 @@ const fetchComments = async (id) => {
 const createNewComment = async (newObject, itemId = null) => {
   const appID = 'Y5ExZ6TMJ2KXP15dXk0s';
   await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments/`, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json; Charset=UTF-8',
-      },
-      body: JSON.stringify(newObject),
-    })
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; Charset=UTF-8',
+    },
+    body: JSON.stringify(newObject),
+  })
     .then((response) => {
       if (response.status === 201) {
         message('Comment successfully added.');
